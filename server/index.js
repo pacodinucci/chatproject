@@ -1,11 +1,16 @@
 import express from "express";
 import http from 'http';
 import { Server as SocketServer } from "socket.io";
+import { resolve } from 'path';
+import { PORT } from './config.js';
+import morgan from 'morgan';
 
 const app = express();
 const server = http.createServer(app);
 const io = new SocketServer(server);
-const port = process.env.PORT || 3001;
+
+app.use(morgan('dev'));
+app.use(express.static(resolve('client/dist')))
 
 io.on('connection', socket => {
     console.log(socket.id);
@@ -20,6 +25,5 @@ io.on('connection', socket => {
 })
 
 
-server.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-  });
+server.listen(PORT);
+console.log('server on port', PORT)
