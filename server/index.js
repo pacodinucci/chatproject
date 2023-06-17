@@ -5,6 +5,7 @@ import { Server as SocketServer } from "socket.io";
 const app = express();
 const server = http.createServer(app);
 const io = new SocketServer(server);
+const port = 3000;
 
 io.on('connection', socket => {
     console.log(socket.id);
@@ -19,5 +20,5 @@ io.on('connection', socket => {
 })
 
 
-server.listen(3001);
+server.listen(port, '0.0.0.0');
 console.log('Server on port', 3001);
