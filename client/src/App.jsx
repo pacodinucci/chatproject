@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import send from './assets/send.svg';
 
 const socket = io('/')
@@ -7,6 +7,7 @@ const socket = io('/')
 function App() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const inputRef = useRef(null);
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,8 @@ function App() {
     }
     setMessages([...messages, newMessage]);
     socket.emit('message', message);
+    setMessage('');
+    inputRef.current.focus();
   }
 
   useEffect(() => {
@@ -44,7 +47,7 @@ function App() {
           </ul>
           <div className='flex'>
             <input className='border-2 border-zinc-500 p-2 w-full text-black' type="text" placeholder='Write your message...'
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)} value={message}
               />
             <button className='border-2 rounded-md p-2 h-full'><img className='max-h-9' src={send} alt="" /></button>
           </div>
