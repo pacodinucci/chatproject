@@ -29,8 +29,8 @@ function App() {
   
   return (
     <div className='h-screen bg-zinc-800 text-white flex flex-col items-center justify-center'>
-      <h1 className='text-2xl font-bold my-2'>Proyecto Chat FRANCESCA FELICIA</h1>
-      <form className='bg-zinc-900 flex flex-col justify-between h-2/3' onSubmit={handleSubmit}>
+      <h1 className='text-2xl font-bold my-2'>Proyecto</h1>
+      <form className='bg-zinc-900 flex flex-col justify-between h-2/3 w-1/2' onSubmit={handleSubmit}>
           <ul className='p-2'>
             {messages.map((message, i) => (
               <li className={
