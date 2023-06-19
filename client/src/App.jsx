@@ -8,6 +8,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const inputRef = useRef(null);
+  const messagesRef = useRef(null);
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +28,11 @@ function App() {
       socket.off('message', receiveMessage);
     };
   }, [])
+
+  useEffect(() => {
+    // Scroll al fondo del contenedor de mensajes
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+  }, [messages]);
 
   const receiveMessage = message => setMessages(state => [...state, message])
   
