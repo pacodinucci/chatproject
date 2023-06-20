@@ -42,7 +42,7 @@ function App() {
     <div className='h-screen bg-blue-950 text-white flex flex-col items-center justify-center'>
       <h1 className='text-2xl font-bold my-2'>CHAT PROJECT</h1>
       <h2 className='text-xl font-bold my-2'>Proyecto de chat con NodeJS, Express, socket.io, React y Tailwind</h2>
-      <form className='bg-sky-900 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
+      <form className='bg-sky-950 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
           <ul className='p-2 flex flex-col justify-end items-start flex-grow-1 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100' ref={messagesRef}>
             {messages.map((message, i) => (
               <li className={
@@ -61,7 +61,7 @@ function App() {
             <button className='border-2 rounded-md p-2 h-full'><img className='max-h-9' src={send} alt="" /></button>
           </div>
       </form>
-      <h2 className='text-xl font-bold my-2'>Desarrollado por Francisco Di Nucci</h2>
+      <h2 className='text-s font-bold my-2'>Desarrollado por Francisco Di Nucci</h2>
           
         </div>
       )
