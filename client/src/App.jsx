@@ -15,7 +15,7 @@ function App() {
     if(message.trim() === '') return;
     const newMessage = {
       body: message,
-      from: 'Me'
+      from: 'Yo'
     }
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     socket.emit('message', message);
@@ -41,8 +41,8 @@ function App() {
   return (
     <div className='h-screen bg-blue-950 text-white flex flex-col items-center justify-center'>
       <h1 className='text-2xl font-bold my-2'>CHAT PROJECT</h1>
-      <h2 className='text-xl font-bold my-2'>Proyecto de chat con NodeJS, Express, socket.io y React</h2>
-      <form className='bg-orange-100 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
+      <h2 className='text-xl font-bold my-2'>Proyecto de chat con NodeJS, Express, socket.io, React y Tailwind</h2>
+      <form className='bg-blue-500 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
           <ul className='p-2 flex flex-col justify-end items-start flex-grow-1 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100' ref={messagesRef}>
             {messages.map((message, i) => (
               <li className={
@@ -55,7 +55,7 @@ function App() {
             ))}
           </ul>
           <div className='flex'>
-            <input className='border-2 border-zinc-500 p-2 w-full text-black' type="text" placeholder='Write your message...'
+            <input className='border-2 border-zinc-500 p-2 w-full text-black' type="text" placeholder='Escriba un mensaje...'
               onChange={(e) => setMessage(e.target.value)} value={message}
               />
             <button className='border-2 rounded-md p-2 h-full'><img className='max-h-9' src={send} alt="" /></button>
