@@ -17,7 +17,7 @@ function App() {
       body: message,
       from: 'Yo'
     }
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    setMessages([...messages, newMessage]);
     socket.emit('message', message);
     setMessage('');
     inputRef.current.focus();
@@ -36,7 +36,7 @@ function App() {
   }, [messages]);
 
   const receiveMessage = (message) =>
-    setMessages((prevMessages) => [...prevMessages, message]);
+    setMessages([...messages, message]);
   
   return (
     <div className='h-screen bg-blue-950 text-white flex flex-col items-center justify-center'>
