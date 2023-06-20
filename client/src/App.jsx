@@ -35,8 +35,7 @@ function App() {
     messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
   }, [messages]);
 
-  const receiveMessage = (message) =>
-    setMessages([...messages, message]);
+  const receiveMessage = message => setMessages(state => [...state, message]);
   
   return (
     <div className='h-screen bg-blue-950 text-white flex flex-col items-center justify-center'>
