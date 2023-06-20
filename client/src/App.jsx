@@ -39,7 +39,7 @@ function App() {
     setMessages((prevMessages) => [...prevMessages, message]);
   
   return (
-    <div className='h-screen bg-zinc-800 text-white flex flex-col items-center justify-center'>
+    <div className='h-screen bg-prussian-blue-950 text-white flex flex-col items-center justify-center'>
       <h1 className='text-2xl font-bold my-2'>PROYECTO DE CHAT</h1>
       <form className='bg-zinc-900 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
           <ul className='p-2 flex flex-col justify-end items-start flex-grow-1 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100' ref={messagesRef}>
