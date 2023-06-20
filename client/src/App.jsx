@@ -17,7 +17,7 @@ function App() {
       body: message,
       from: 'Me'
     }
-    setMessages((prevMessages)=>[...prevMessages, newMessage]);
+    setMessages([...messages, newMessage]);
     socket.emit('message', message);
     setMessage('');
     inputRef.current.focus();
@@ -32,12 +32,10 @@ function App() {
 
   useEffect(() => {
     // Scroll al fondo del contenedor de mensajes
-    if(messages.length > 0){
-      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-    }
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
   }, [messages]);
 
-  const receiveMessage = message => setMessages((prevMessages) => [...prevMessages, message]);
+  const receiveMessage = message => setMessages(state => [...state, message])
   
   return (
     <div className='h-screen bg-zinc-800 text-white flex flex-col items-center justify-center'>
