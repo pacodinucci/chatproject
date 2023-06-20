@@ -45,7 +45,7 @@ function App() {
           <ul className='p-2 flex flex-col justify-end items-start flex-grow-1 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100' ref={messagesRef}>
             {messages.map((message, i) => (
               <li className={
-                `my-2 p-2 table rounded-md ${message.from === 'Me' ? 
+                `my-2 p-2 table rounded-md ${message.from === 'Yo' ? 
                 'bg-sky-700 ml-auto' : 'bg-black'}`
               } key={i}>
                 <span className='text-xs text-slate-400 block font-bold'>{message.from}</span>
