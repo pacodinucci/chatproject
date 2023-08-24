@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 import { useState, useEffect, useRef } from 'react';
-import send from './assets/send.svg';
+import { FaPaperPlane } from 'react-icons/fa'
 
 const socket = io('/')
 
@@ -40,8 +40,8 @@ function App() {
   return (
     <div className='h-screen bg-blue-950 text-white flex flex-col items-center justify-center'>
       <h1 className='text-2xl font-bold my-2 text-center'>CHAT PROJECT</h1>
-      <h2 className='text-xl font-bold my-2 text-center'>Proyecto de chat con NodeJS, Express, socket.io, React y Tailwind</h2>
-      <form className='bg-green-50 flex flex-col justify-between h-2/3 w-2/3 overflow-hidden' onSubmit={handleSubmit}>
+      <h2 className='text-2xl font-bold my-2 text-center'>Proyecto de chat con NodeJS, Express, socket.io, React y Tailwind</h2>
+      <form className='bg-slate-500 flex flex-col justify-between h-2/3 w-[40%] overflow-hidden' onSubmit={handleSubmit}>
           <ul className='p-2 flex flex-col justify-end items-start flex-grow-1 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100' ref={messagesRef}>
             {messages.map((message, i) => (
               <li className={
@@ -57,10 +57,10 @@ function App() {
             <input className='border-2 border-zinc-500 p-2 w-full text-black' type="text" placeholder='Escriba un mensaje...'
               onChange={(e) => setMessage(e.target.value)} value={message}
               />
-            <button className='border-2 rounded-md p-2 h-full'><img className='max-h-9' src={send} alt="" /></button>
+            <button className='border-2 rounded-md p-2 h-full'><FaPaperPlane className='max-h-9'/></button>
           </div>
       </form>
-      <h2 className='text-s font-bold my-2'>Desarrollado por Francisco Di Nucci</h2>
+      <h2 className='text-xl font-bold my-2'>Desarrollado por Francisco Di Nucci</h2>
           
         </div>
       )
